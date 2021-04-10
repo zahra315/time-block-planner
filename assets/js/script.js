@@ -10,7 +10,7 @@ displayTime = () => {
   setInterval(displayTime, 1000);
 
   var loadSavedEvents = () => {
-    savedEvents = JSON.parse(localStorage.getItem("events"));
+    savedEvents = JSON.parse(localStorage.getItem("events")) || [];
   
 }; 
 
