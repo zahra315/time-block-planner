@@ -9,6 +9,10 @@ displayTime = () => {
   }
   setInterval(displayTime, 1000);
 
+  var loadSavedEvents = () => {
+    savedEvents = JSON.parse(localStorage.getItem("events"));
+  
+}; 
 
 // work grid
 for (var i = 9; i <= 17; i++) {
@@ -39,3 +43,38 @@ for (var i = 9; i <= 17; i++) {
 
   $(".container").append(timeRowEl);
 };
+
+
+// Save Button Event
+$(".saveBtn").hover(() =>{
+  $(this).html('<i class="fas fa-save"></i>');},
+  () =>{$(this).html('<i class="far fa-save"></i>');
+  },
+);
+
+
+$(".saveBtn").on("click", function() {
+
+  var text = $(this).siblings(".description").val().trim();
+  var eventTime = $(this).siblings(".hour").text();
+  eventObj = {
+      time: eventTime,
+      event: text
+  };
+  for (var i = 0; i < savedEvents.length; i++) {
+      if (savedEvents[i].time == eventTime) {
+          savedEvents.splice(i, 1);
+      };
+  };
+  savedEvents.push(eventObj);
+  saveEvents();
+});
+
+
+var saveEvents = () =>{
+  localStorage.setItem("events", JSON.stringify(savedEvents));
+};
+
+
+
+loadSavedEvents(); 
