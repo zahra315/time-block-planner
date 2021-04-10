@@ -20,7 +20,7 @@ WHEN I refresh the page
 THEN the saved events persist
 ```
 
-<h2>[Day Planner Aplication](https://zahra315.github.io/time-block-planner/)</h2>
+<h2><a href="https://zahra315.github.io/time-block-planner/">Day Planner Aplication</a></h2>
 <p align="center">
   <img src="https://github.com/zahra315/time-block-planner/blob/main/assets/img/01.jpg" width="50%">
 </p>
